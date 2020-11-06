@@ -40,8 +40,8 @@ label.required:after {
         <input type="hidden" id="jenis_permohonan" name="jenis_permohonan" value="2">
         <div class="form-group">
         {{Form::label('kelas_permohonan', 'Kelas Permohonan', [ 'class' => 'required' ])}}
-        <select name="kelas_permohonan" class="custom-select mb-3" >
-    <option selected ></option>
+        <select name="kelas_permohonan" class="custom-select mb-3" required>
+    <option value="">Pilih Kelas</option>
     <option value="kelas1">Rumah Awam Kelas 1</option>
     <option value="kelas2">Rumah Awam Kelas 2</option>
     <option value="kelas3">Rumah Awam Kelas 3</option>
@@ -83,16 +83,17 @@ label.required:after {
         </div><div class="form-group">
             {{Form::label('no_lesen', 'No. Lesen/Permit/Rujukan MPK/MBSA (Jika Ada)')}}
             {{Form::text('no_lesen', '', ['class' => 'form-control', 'placeholder' => 'No. Lesen'])}}
-        </div><div class="form-group">
+   <!--     </div><div class="form-group">
             {{Form::label('tarikh', 'Tarikh', [ 'class' => 'required' ])}}
             {{Form::date('tarikh', '', ['class' => 'form-control', 'placeholder' => 'Tarikh','required'])}}
-        </div>
+        </div> -->
         <div class="container mt-3">
         <div class="custom-control custom-checkbox mb-3">
       <input type="checkbox" class="custom-control-input" id="customCheck" name="setuju" required>
       <label class="custom-control-label" for="customCheck">Saya mengaku bahawa keterangan-keterangan di atas adalah betul dan lengkap.</label>
     </div></div>
     <input type="hidden" id="status_permohonan_id" name="status_permohonan_id" value="1">
+    <input type="hidden" id="tarikh" name="tarikh" value="{{ date('Y-m-d') }}">
     <input type="hidden" id="iklan_5_minggu" name="iklan_5_minggu" value="NULL">
     <input type="hidden" id="peraturan" name="peraturan" value="NULL">
     <div class="container mt-3"> <h2>Senarai Semak Permohonan</h2></div>
@@ -108,55 +109,152 @@ label.required:after {
  <tr>
       
       <td><?php echo ("1"); ?></td>
-     <td> {{Form::label('passport', 'Gambar Pemohon berukuran Passport', [ 'class' => 'required' ])}}</td>
+     <td> {{Form::label('passport', 'Gambar Pemohon berukuran Passport (format JPEG/JPG)', [ 'class' => 'required' ])}}</td>
       <td> <div class="form-group">
-            {{Form::file('passport', ['required'])}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile01" name="passport"
+      aria-describedby="inputGroupFileAddon01" required>
+    <label class="custom-file-label" for="inputGroupFile01">Image</label>
+  </div>
+         <!--   {{Form::file('passport', ['required'])}}-->
         </div></td>    
  </tr></div>   
+ <script>
+            $('#inputGroupFile01').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script>
  <td><?php echo ("2"); ?></td>
       <td> {{Form::label('salinan_pendaftaran_syarikat', 'Salinan Pendaftaran Syarikat/Perniagaan-SSM (Borang 9/13)', [ 'class' => 'required' ])}}</td>
       <td><div>
-      {{Form::file('salinan_pendaftaran_syarikat', ['required'])}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile02" name="salinan_pendaftaran_syarikat"
+      aria-describedby="inputGroupFileAddon01" required>
+    <label class="custom-file-label" for="inputGroupFile02">Choose File</label>
+  </div>
+      <!--{{Form::file('salinan_pendaftaran_syarikat', ['required'])}}-->
     </div></td>    
- </tr></div><div>
+ </tr></div>
+ <script>
+            $('#inputGroupFile02').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script>
+ <div>
  <tr>
       
       <td><?php echo ("3"); ?></td>
       <td><?php echo ("Memorandum and Article of Associate (M & A) Syarikat (Jika berkaitan)"); ?></td>
       <td><div>
-      {{Form::file('memorandum')}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile03" name="memorandum"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile03">Choose File</label>
+  </div>
+     <!-- {{Form::file('memorandum')}}-->
     </div></td>    
- </tr></div><div>
+ </tr></div>
+ <script>
+            $('#inputGroupFile03').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script>
+ <div>
  <tr>
       
       <td><?php echo ("4"); ?></td>
       <td><?php echo ("Borang 21,44 & 49 (Jika berkaitan)"); ?></td>
       <td><div>
-      {{Form::file('borang21_44_49')}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile04" name="borang21_44_49"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile04">Choose File</label>
+  </div>
+     <!-- {{Form::file('borang21_44_49')}}-->
     </div></td>    
- </tr></div><div>
+ </tr></div>
+ <script>
+            $('#inputGroupFile04').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script>
+ <div>
  <tr>
       
       <td><?php echo ("5"); ?></td>
       <td><?php echo ("Salinan Dokumen ID SST (Jika ada)"); ?></td>
       <td><div>
-      {{Form::file('salinan_id_sst')}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile05" name="salinan_id_sst"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile05">Choose File</label>
+  </div>
+     <!-- {{Form::file('salinan_id_sst')}}-->
     </div></td>    
- </tr> </div><div><tr>
+ </tr> </div>
+ <script>
+            $('#inputGroupFile05').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script>
+ <div><tr>
       
       <td><?php echo ("6"); ?></td>
       <td> {{Form::label('surat_permohonan_lesen', 'Salinan Surat Permohonan Lesen/Lesen Premis Perniagaan/Lesen Bar/Lesen perniagaan daripada MPK/MBSA *Nota:Perlu dikemukakan Salinan kelulusan daripada PBT sebelum lesen menjual minuman keras boleh dikeluarkan dan pembayaran dijelaskan', [ 'class' => 'required' ])}}</td>    
       <td><div>
-      {{Form::file('surat_permohonan_lesen', ['required'])}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile06" name="surat_permohonan_lesen"
+      aria-describedby="inputGroupFileAddon01" required>
+    <label class="custom-file-label" for="inputGroupFile06">Choose File</label>
+  </div>
+     <!-- {{Form::file('surat_permohonan_lesen', ['required'])}}-->
     </div></td>    
- </tr></div><div> <tr>
+ </tr></div>
+ <script>
+            $('#inputGroupFile06').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script>
+ <div> <tr>
       
       <td><?php echo ("7"); ?></td>
       <td> {{Form::label('lesen_jualan', 'Lesen Menjual Minuman Keras PDT Klang (Tahun sebelum dan terkini)', [ 'class' => 'required' ])}}</td>
       <td><div>
-      {{Form::file('lesen_jualan', ['required'])}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile07" name="lesen_jualan"
+      aria-describedby="inputGroupFileAddon01" required>
+    <label class="custom-file-label" for="inputGroupFile07">Choose File</label>
+  </div>
+     <!-- {{Form::file('lesen_jualan', ['required'])}}-->
     </div></td>    
- </tr></div><div> <tr>
+ </tr></div>
+ <script>
+            $('#inputGroupFile07').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script>
+ <div> <tr>
       
       <td><?php echo ("8"); ?></td>
       <td> {{Form::label('jenayah', 'Bebas daripada Rekod Jenayah PDRM', [ 'class' => 'required' ])}}</td>      
@@ -168,9 +266,22 @@ label.required:after {
       <td><?php echo ("9"); ?></td>
       <td><?php echo ("Lain-lain"); ?></td>
       <td><div>
-      {{Form::file('lain')}}
+      <div class="custom-file">
+    <input type="file" class="form-group" id="inputGroupFile09" name="lain"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile09">Choose File</label>
+  </div>
+      <!--{{Form::file('lain')}}-->
     </div></td>    
- </tr></div></th></tr></table></div>
+ </tr>
+ <script>
+            $('#inputGroupFile09').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+</script></div></th></tr></table></div>
 <br><br>
     </body>
 </html>

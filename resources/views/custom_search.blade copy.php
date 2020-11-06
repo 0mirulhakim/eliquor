@@ -310,7 +310,7 @@ $(document).ready(function(){
                     name:'catatan',
                 }
             ],
-            dom: 'Blfrtip',
+            dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ]

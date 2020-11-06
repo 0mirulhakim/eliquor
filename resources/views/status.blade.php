@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Semak Status</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -277,13 +277,27 @@ th {
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
             
-    <img alt="Selangor logo" src="img/jataselangor.png" style="height: 74px; width: 63px;" title="Selangor">
+            <img alt="Selangor logo" src="img/jataselangor.png" style="height: 74px; width: 63px;" title="Selangor">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('Pejabat Daerah/Tanah Klang', 'Pejabat Daerah/Tanah Klang') }}
+                    {{ config('Pejabat Daerah/Tanah Klang', 'E-Liquor PDTK') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                 
+              
+     
+        <ul class="navbar-nav ml-auto">
+       
+          <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="{{ url('/status') }}">{{ __('Semak Status') }}</a>
+                            </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{{ url('/') }}">Permohonan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="img/garispanduan.pdf">Garis Panduan</a>
+          </li>             
+          
+          </li>
+                
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -295,14 +309,7 @@ th {
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link " href="{{ url('/') }}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ __('Permohonan') }} <span class="caret"></span>
-                                </a>
-
-                              
-                              
-                            </li>
+                     
                             
                            </div>
             @endif
@@ -338,7 +345,7 @@ th {
     @endforeach
 @endif
           <h2 class="text-white mb-4">Semak Status Permohonan</h2>
-          <p class="text-white-50">Sila masukkan no.rujukan / kad pengenalan untuk menyemak status permohonan anda.</p>
+          <p class="text-white-50">Sila masukkan no.rujukan untuk menyemak status permohonan anda.</p>
           <form action="{{URL::to('/search')}}" method="POST" role="search">
     {{ csrf_field() }}
     <div class="input-group">
