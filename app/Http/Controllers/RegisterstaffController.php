@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Mail;
+use App\User;
 use Illuminate\Http\Request;
-use DB;
-
-use App\Homepage;
-class pengumumanController extends Controller
+use Illuminate\Support\Facades\Hash;
+class RegisterstaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class pengumumanController extends Controller
      */
     public function index()
     {
-        
-       
-        $posts = DB::select('SELECT * FROM homepages where id="1"');
-        return view('pengumuman')->with('posts',$posts);;
+        //
     }
 
     /**
@@ -37,16 +32,18 @@ class pengumumanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $post=new Homepage;
-       // $post=Homepage::find($id);
-        $post=Homepage::find($request->input('id'));
-        $post->data=$request->input('data');
-        $post->data1=$request->input('data1');
-        $post->data2=$request->input('data2');
-        $post->save(); 
-        return redirect('pengumuman')->with('success','Data telah dikemaskini.');
+        $this->validate(request(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        
+        $user = User::create(request(['name', 'email', 'password']));
+       
+        
+        return redirect()->to('/home');
     }
 
     /**

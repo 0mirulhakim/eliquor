@@ -16,7 +16,7 @@ class Status_permohonansController extends Controller
     public function index()
     {
         $posts = DB::table('permohonan')
-      
+        ->whereYear('tarikh',date('Y'))
        ->join('status_permohonans', 'status_permohonans.permohonan_id', '=', 'permohonan.id')->where('nama_staff', '=', Auth::user()->name )
        ->select('status_permohonans.status','status_permohonans.permohonan_id','permohonan.nama','status_permohonans.id', 'status_permohonans.catatan', 'status_permohonans.nama_staff', 'status_permohonans.created_at')
        ->get();
