@@ -13,6 +13,7 @@ use App\Permohonan;
 |
 */
 
+Auth::routes(['register' => false]);
 Route::get('/', function () {
     $homes = DB::table('homepages')->get();
     return view('welcome', ['homes' => $homes]);
@@ -21,6 +22,7 @@ Route::get('/', function () {
 Route::get('/baru1', function () {
     return view("baru1");
 });
+
 Route::get('/memperbaharui1', function () {
     return view("memperbaharui1");
 });
@@ -29,15 +31,6 @@ Route::get('/rayuan1', function () {
 });
 Route::get('/status', function () {
     return view("status");
-});
-Route::get('/track', function () {
-    return view("track");
-});
-Route::get('/pengumuman', function () {
-    return view("pengumuman");
-});
-Route::get('/home1', function () {
-    return view("home1");
 });
 Route::post ( '/search', function () {
 	$q =Request::get ( 'q' );
@@ -48,6 +41,19 @@ Route::post ( '/search', function () {
         return view ( 'status' )->withErrors ('No.rujukan / kad pengenalan tidak wujud' );
         
 } );
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('permohonan', 'PermohonanController');
+Route::get('/track', function () {
+    return view("track");
+});
+Route::get('/pengumuman', function () {
+    return view("pengumuman");
+});
+Route::get('/home1', function () {
+    return view("home1");
+});
+
 Route::post ( '/track', function () {
     $q =Request::get ( 'q' );
     $user = DB::table('status_permohonans')     
@@ -62,13 +68,14 @@ Route::post ( '/track', function () {
         return view ( 'track' )->withErrors ('No.rujukan tidak wujud' );
         
 } );
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('permohonan', 'PermohonanController');
+
 Route::resource('sah', 'SahController');
 Route::resource('sah1', 'Sah1Controller');
 Route::resource('sah2', 'Sah2Controller');
+Route::resource('registerstaffs', 'RegisterstaffController');
 Route::resource('memperbaharui', 'MemperbaharuiController');
 Route::resource('rayuan', 'RayuanController');
 Route::resource('statuses', 'Status_permohonansController');
@@ -76,5 +83,10 @@ Route::resource('status_permohonan', 'Status_permohonansController');
 Route::get('/pengumuman', 'pengumumanController@index')->name('pengumuman');
 Route::resource('customsearch', 'CustomSearchController');
 Route::get('/custom_search/action', 'CustomSearchController@action')->name('custom_search.action');
+Route::resource('laporan', 'LaporanController');
 
+Route::get('/registerstaff', function () {
+    return view("register1");
+});
 
+});
