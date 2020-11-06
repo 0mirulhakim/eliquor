@@ -105,8 +105,8 @@ div.desc {
  <!-- this row will not appear when printing -->
  <div class="row no-print">
                 <div class="col-12">
-           <center><button type="button" onclick="clickHandler()"target="_blank"  class="btn1 btn-default"><i class="fas fa-print"></i>Print</button></center>
-       <br>    <center><a  href="{{route('permohonan.edit', $post->id=$post->permohonan_id)}}" target="_blank" class="btn2 btn-default"><i class="fas fa-edit"></i>Edit</a></center>
+    <!--       <center><button type="button" onclick="clickHandler()"target="_blank"  class="btn1 btn-default"><i class="fas fa-print"></i>Print</button></center>
+       <br>    <center><a  href="{{route('permohonan.edit', $post->id=$post->permohonan_id)}}" target="_blank" class="btn2 btn-default"><i class="fas fa-edit"></i>Edit</a></center> -->
 <script>
     function clickHandler() {
         window.addEventListener("load", window.print());

@@ -65,7 +65,7 @@
       
            <img src="{{ asset('img/jataselangor.png') }}" alt="selangor" class="brand-image"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">PDT Klang</span>
+      <span class="brand-text font-weight-light">E-Liquor Klang</span>
     </a>
 
     <!-- Sidebar -->

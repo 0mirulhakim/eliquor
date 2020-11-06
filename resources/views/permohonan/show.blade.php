@@ -43,6 +43,9 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
+}.btn{
+  background-color: #4fbbd8 ;
+  color:white;
 }
 .btn1 {
   box-shadow: 0 .1875rem .1875rem 0 rgba(0,0,0,.1) !important;
@@ -155,99 +158,94 @@ div.desc {
       <td><?php echo ("2"); ?></td>
       <td><?php echo ("*Salinan Kad Pengenalan"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/salinan_ic/' . $post->salinan_ic)}} ">
-    <img src="{{asset('storage/salinan_ic/' . $post->salinan_ic)}} " alt="salinan_ic" width="600" height="400">
-  </a>
+ <iframe src="{{asset('storage/salinan_ic/' . $post->salinan_ic)}} " alt="salinan_ic" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/salinan_ic/' . $post->salinan_ic)}} "><i class="fas fa-folder"></i></a></center>
   
-</div></td>    
+  
+</td>    
  </tr></div><div>
  <tr>
       
       <td><?php echo ("3"); ?></td>
       <td><?php echo ("*Salinan Pendaftaran Syarikat/Perniagaan-SSM (Borang 9/13)"); ?></td>
       <td ><div class="gallery">
-  <a target="_blank" href="{{asset('storage/salinan_pendaftaran_syarikat/' . $post->salinan_pendaftaran_syarikat)}} ">
-    <img src="{{asset('storage/salinan_pendaftaran_syarikat/' . $post->salinan_pendaftaran_syarikat)}} " alt="salinan_pendaftaran_syarikat" width="600" height="400">
-  </a>
+  <iframe src="{{asset('storage/salinan_pendaftaran_syarikat/' . $post->salinan_pendaftaran_syarikat)}} " alt="salinan_pendaftaran_syarikat" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/salinan_pendaftaran_syarikat/' . $post->salinan_pendaftaran_syarikat)}} "><i class="fas fa-folder"></i></a></center>
   
-</div></td>    
+</td>    
  </tr></div><div>
  <tr>
       
       <td><?php echo ("4"); ?></td>
       <td><?php echo ("Memorandum and Article of Associate (M & A) Syarikat (Jika berkaitan)"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/memorandum/' . $post->memorandum)}} ">
-    <img src="{{asset('storage/memorandum/' . $post->memorandum)}} " alt="memorandum" width="600" height="400">
-  </a>
+      <iframe src="{{asset('storage/memorandum/' . $post->memorandum)}} " alt="memorandum" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/memorandum/' . $post->memorandum)}} "><i class="fas fa-folder"></i></a></center>
   
-</div></td>    
+  </td>    
  </tr></div><div>
  <tr>
       
       <td><?php echo ("5"); ?></td>
       <td><?php echo ("Borang 21,44 & 49 (Jika berkaitan)"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/borang21_44_49/' . $post->borang21_44_49)}} ">
-    <img src="{{asset('storage/borang21_44_49/' . $post->borang21_44_49)}} " alt="lborang21_44_49ain" width="600" height="400">
-  </a>
-</div></td>    
+      <iframe src="{{asset('storage/borang21_44_49/' . $post->borang21_44_49)}} " alt="borang21_44_49" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/borang21_44_49/' . $post->borang21_44_49)}} "><i class="fas fa-folder"></i></a></center>
+  
+  </td>    
  </tr></div><div>
  <tr>
       
       <td><?php echo ("6"); ?></td>
       <td><?php echo ("*Notis Iklan Permohonan di dalam Bahasa Melayu atau Inggeris sahaja.(Berita Harian/Utusan Malaysia/News Straits Times/The Star) \n Sekurang-kurangnya 1 hari dalam akhbar tempatan mengikut tarikh yang diwartakan)"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/notis_iklan/' . $post->notis_iklan)}} ">
-    <img src="{{asset('storage/notis_iklan/' . $post->notis_iklan)}} " alt="notis_iklan" width="600" height="400">
-  </a>
-</div></td>    
+      <iframe src="{{asset('storage/notis_iklan/' . $post->notis_iklan)}} " alt="notis_iklan" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/notis_iklan/' . $post->notis_iklan)}} "><i class="fas fa-folder"></i></a></center>
+  
+  </td>    
  </tr></div><div><tr>
       
       <td><?php echo ("7"); ?></td>
       <td><?php echo ("*Iklan hendaklah ditampal dipremis perniagaan dalam tempoh masa 5 minggu"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/iklan_5_minggu/' . $post->iklan_5_minggu)}} ">
-    <img src="{{asset('storage/iklan_5_minggu/' . $post->iklan_5_minggu)}} " alt="iklan_5_minggu" width="600" height="400">
-  </a>
-</div></td>    
+      <iframe src="{{asset('storage/iklan_5_minggu/' . $post->iklan_5_minggu)}} " alt="iklan_5_minggu" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/iklan_5_minggu/' . $post->iklan_5_minggu)}} "><i class="fas fa-folder"></i></a></center>
+  </td>    
  </tr></div><div>
  <tr>
       
       <td><?php echo ("8"); ?></td>
       <td><?php echo ("Salinan Dokumen ID SST (Jika ada)"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/salinan_id_sst/' . $post->salinan_id_sst)}} ">
-    <img src="{{asset('storage/salinan_id_sst/' . $post->salinan_id_sst)}} " alt="salinan_id_sst" width="600" height="400">
-  </a>
-</div></td>    
+      <iframe src="{{asset('storage/salinan_id_sst/' . $post->salinan_id_sst)}} " alt="salinan_id_sst" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/salinan_id_sst/' . $post->salinan_id_sst)}} "><i class="fas fa-folder"></i></a></center>
+  </td>    
  </tr> </div><div><tr>
       
       <td><?php echo ("9"); ?></td>
       <td><?php echo ("*Salinan Surat Permohonan Lesen/Lesen Premis Perniagaan/Lesen Bar/Lesen perniagaan daripada MPK/MBSA *Nota:Perlu dikemukakan Salinan kelulusan daripada PBT sebelum lesen menjual minuman keras boleh dikeluarkan dan pembayaran dijelaskan"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/surat_permohonan_lesen/' . $post->surat_permohonan_lesen)}} ">
-    <img src="{{asset('storage/surat_permohonan_lesen/' . $post->surat_permohonan_lesen)}} " alt="surat_permohonan_lesen" width="600" height="400">
-  </a>
-</div></td>    
+      <iframe src="{{asset('storage/surat_permohonan_lesen/' . $post->surat_permohonan_lesen)}} " alt="surat_permohonan_lesen" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/surat_permohonan_lesen/' . $post->surat_permohonan_lesen)}} "><i class="fas fa-folder"></i></a></center>
+  </td>    
  </tr></div><tr>
       
       <td><?php echo ("10"); ?></td>
       <td><?php echo ("*Pelan Lokasi Premis Perniagaan berwarna(Google Map/Waze)"); ?></td>
       <td><div class="gallery">
-  <a target="_blank" href="{{asset('storage/pelan_lokasi/' . $post->pelan_lokasi)}} ">
-    <img src="{{asset('storage/pelan_lokasi/' . $post->pelan_lokasi)}} " alt="pelan_lokasi" width="600" height="400">
-  </a>
-</div></td>    
+      <iframe src="{{asset('storage/pelan_lokasi/' . $post->pelan_lokasi)}} " alt="pelan_lokasi" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/pelan_lokasi/' . $post->pelan_lokasi)}} "><i class="fas fa-folder"></i></a></center>
+  
+  </td>    
  </tr></div><tr>
       
       <td><?php echo ("11"); ?></td>
       <td ><?php echo ("*Gambar bersaiz 3R premis perniagaan berkaitan yang terkini (Meliputi gambar signboard luar dan didalam premis yang berwarna)"); ?></td>
       <td ><div class="gallery">
-  <a target="_blank" href="{{asset('storage/gambar_3r_premis/' . $post->gambar_3r_premis)}} ">
-    <img src="{{asset('storage/gambar_3r_premis/' . $post->gambar_3r_premis)}} " alt="gambar_3r_premis" width="600" height="400">
-  </a>
-</div></td>    
+      <iframe src="{{asset('storage/gambar_3r_premis/' . $post->gambar_3r_premis)}} " alt="gambar_3r_premis" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/gambar_3r_premis/' . $post->gambar_3r_premis)}} "><i class="fas fa-folder"></i></a></center>
+  
+  </td>    
  </tr></div><div><div><div> <tr>
       
       <td ><?php echo ("12"); ?></td>
@@ -273,11 +271,21 @@ div.desc {
       <td ><?php echo ("14"); ?></td>
       <td><?php echo ("Lain-lain"); ?></td>
       <td ><div class="gallery">
-  <a target="_blank" href="{{asset('storage/lain/' . $post->lain)}} ">
-    <img src="{{asset('storage/lain/' . $post->lain)}} " alt="lain" width="600" height="400">
+      <iframe src="{{asset('storage/lain/' . $post->lain)}} " alt="lain" width="100%" height="100%"></iframe></div>
+  <center><a target="_blank" class="btn  btn-default btn-sm" href="{{asset('storage/lain/' . $post->lain)}} "><i class="fas fa-folder"></i></a></center>
+  
+  </td>    
+ </tr>
+ <div> <tr>
+      
+    <!--  <td ><?php echo ("15"); ?></td>
+      <td><?php echo ("Lesen Menjual Minuman Keras PDT Klang (Tahun sebelum dan terkini)"); ?></td>
+      <td ><div class="gallery">
+  <a target="_blank" href="{{asset('storage/lesen_jualan/' . $post->lesen_jualan)}} ">
+    <img src="{{asset('storage/lesen_jualan/' . $post->lesen_jualan)}} " alt="lain" width="600" height="400">
   </a>
 </div></td>    
- </tr></div></th></tr></table></div> 
+ </tr>--></div></th></tr></table></div> 
  
 <br><br>
     </body>
@@ -326,9 +334,10 @@ div.desc {
             {{Form::label('no_ic', 'No. Kad  Pengenalan')}}
             {{Form::text('no_ic', $post->no_ic, ['class' => 'form-control', 'placeholder' => 'no ic','disabled'])}}
         </div>
-        <div class="form-group">
+        </div><div class="form-group">
             {{Form::label('tarikh', '*Tarikh')}}
-            {{Form::date('tarikh', '', ['class' => 'form-control', 'placeholder' => 'Tarikh','required'])}}
+            {{Form::date('tarikh',  old('tarikh', now()->format('Y-m-d')), ['class' => 'form-control', 'placeholder' => 'Tarikh','required'])}}
+            
         </div>
         <input type="hidden" id="nama_staff" name="nama_staff" value="{{ Auth::user()->name }}">
         <input type="hidden" id="permohonan_id" name="permohonan_id" value="{{$post->id}}">
